@@ -1,17 +1,17 @@
 #Links :
-#http://download.unity3d.com/download_unity/unity-editor-installer-5.1.0f3+2015082501.sh
+#http://beta.unity3d.com/download/ee86734cf592/unity-editor-installer-2017.2.0f3.sh
 
 FROM ubuntu:16.10
 
 MAINTAINER jcardoso 
 
-ARG PACKAGE="/usr/src/unity-editor_amd64-2017.1.0xf1Linux.deb"
+ARG PACKAGE="/usr/src/unity-editor_amd64-2017.2.0f3Linux.deb"
 ARG VIDEO_GID
 
 RUN apt-get update
 
 WORKDIR unity3d
-COPY unity-editor_amd64-2017.1.0xf1Linux.deb /usr/src/
+COPY unity-editor_amd64-2017.2.0f3Linux.deb /usr/src/
 
 #Resolve missing dependencies
 RUN dpkg -i ${PACKAGE} || apt-get -f install -y
